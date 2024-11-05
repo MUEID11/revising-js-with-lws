@@ -1,9 +1,9 @@
 //ES6 fat arrow function
 // let number = () => 10;
 // console.log(number())
-const searchInput = document.querySelector(".search");
-const display = document.querySelector(".result");
-const thanks = document.querySelector(".thanks");
+// const searchInput = document.querySelector(".search");
+// const display = document.querySelector(".result");
+// const thanks = document.querySelector(".thanks");
 
 // function show(){
 //   display.innerHTML = this.value;
@@ -24,4 +24,12 @@ const thanks = document.querySelector(".thanks");
 //var self = this; in  a normal function.
 
 
-searchInput.addEventListener("keyup", showArrow);
+// searchInput.addEventListener("keyup", show);
+
+//reduce
+const numbers = [1,2,3,4,5,6,7];
+
+const res = numbers.reduce((prevValue, currentValue, currentIndex, arr) => {
+  return prevValue + currentValue;
+}, 0)
+console.log(res);
