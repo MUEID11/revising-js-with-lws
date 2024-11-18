@@ -1,11 +1,11 @@
-import Travel from "./Travel"
+
 
 function App() {
   
 
   return (
     <>
-     <Travel />
+     
     </>
   )
 }
