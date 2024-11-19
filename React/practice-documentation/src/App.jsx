@@ -1,3 +1,4 @@
+import Tasklist from "./Tasklist/Tasklist"
 
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
 
   return (
     <>
-     
+     <Tasklist />
     </>
   )
 }
