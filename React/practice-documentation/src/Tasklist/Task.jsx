@@ -1,13 +1,16 @@
 import { useState } from "react";
 
-const Task = ({ task }) => {
+const Task = ({ task, onChangeTask, onDeleteTask }) => {
   const [isEditing, setIsEditing] = useState(false);
   let taskContent;
 
   if (isEditing) {
     taskContent = (
       <>
-        <input type="text" />
+        <input type="text" value={task.text} onChange={(e) => onChangeTask({
+          ...task,
+          text: e.target.value,
+        })} />
         <button onClick={() => setIsEditing(false)}>save</button>
       </>
     );
@@ -23,9 +26,12 @@ const Task = ({ task }) => {
     <>
       <li>
         <label>
-          <input type="checkbox" />
+          <input type="checkbox" checked={task.done} onChange={(e)=>onChangeTask({
+            ...task,
+            done: e.target.checked,
+          })} />
           {taskContent}
-          <button>delete</button>
+          <button onClick={()=>onDeleteTask(task.id)}>delete</button>
         </label>
       </li>
     </>
